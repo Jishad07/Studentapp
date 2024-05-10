@@ -12,8 +12,9 @@ String? image;
 
 
 class Editstudent extends StatefulWidget {
-   Editstudent({super.key,required this.previousdetails});
+   const Editstudent({super.key,required this.previousdetails});
    
+   // ignore: prefer_typing_uninitialized_variables
    final previousdetails;
    
   
@@ -71,6 +72,7 @@ class _EditstudentState extends State<Editstudent> {
                     if(value==null||value.isEmpty){
                       return "Enter Student Name";
                     }
+                    return null;
                   },
                   maxLength: 11,
                   controller: studentname,
@@ -87,6 +89,7 @@ class _EditstudentState extends State<Editstudent> {
                     if(value==null||value.isEmpty){
                       return "Enter Student Place";
                     }
+                    return null;
                   },
                   maxLength: 13,
                   controller: studentplace,
@@ -102,6 +105,7 @@ class _EditstudentState extends State<Editstudent> {
                     if(value==null||value.isEmpty){
                       return"Enter Student Age";
                     }
+                    return null;
                   },
                   controller: studentage,
                   keyboardType:TextInputType.number ,
@@ -118,6 +122,7 @@ class _EditstudentState extends State<Editstudent> {
                     if(value==null||value.isEmpty||value.length<10){
                       return"Enter Student Phone Number";
                     }
+                    return null;
                   },
                   controller: studentphone,
                   keyboardType:TextInputType.number ,
@@ -164,7 +169,7 @@ class _EditstudentState extends State<Editstudent> {
           editStudent(id, stname, stplace, stage, stphone,image!);  
          formkey.currentState!.reset();
         image!=null;  
-         Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>Homescreen()));
+         Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const Homescreen()));
       //  await addStudent(student);
        
        
@@ -182,6 +187,7 @@ class _EditstudentState extends State<Editstudent> {
       
       });
     }
+    // ignore: use_build_context_synchronously
     Navigator.of(context).pop();
   }
    
@@ -194,6 +200,7 @@ class _EditstudentState extends State<Editstudent> {
         image = image1!.path;
       });
     }
+        // ignore: use_build_context_synchronously
     Navigator.of(context).pop();
   }
     void showalertdialog(BuildContext context){

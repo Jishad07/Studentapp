@@ -33,29 +33,29 @@ class _HomescreenState extends State<Homescreen> {
                     delegate: Searchpage(),
                   );
         },
-         icon:Icon(Icons.search))],
+         icon:const Icon(Icons.search))],
       ),
       body: Column(
         children: [
           Expanded(
             flex: 3,
             child: Container(
-              decoration: BoxDecoration(
+              decoration:const BoxDecoration(
                 image: DecorationImage(image: AssetImage("lib/assets/school.png"),fit: BoxFit.cover)
               ),           
           )),
           Expanded(
             flex: 7,
             child:Container(
-              child: Studentlist(),
+              child: const Studentlist(),
           ) ),
 
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.green[900]),
             onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>StudentAddPage()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const StudentAddPage()));
              image1=null;
-          }, child:Text("+Add Student" ,))
+          }, child:const Text("+Add Student" ,))
         ],
       ),
     
